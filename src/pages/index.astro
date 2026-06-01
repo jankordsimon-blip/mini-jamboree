@@ -8,6 +8,7 @@ import newImage from "../assets/news/Bild 29.03.26 um 16.51.png";
 import neewImage from "../assets/news/Bruder5.jpg";
 import japanesImage from "../assets/news/WhatsApp Image 2026-04-29 at 12.24.31.jpeg";
 import PrüferImage from "../assets/news/prüfer 3.jpg";
+import DBImage from "../assets/news/DB_foto.jpg";
 
 const updates = [
   {
@@ -15,8 +16,8 @@ const updates = [
     title: "Get 10% off your train ticket",
     text: `Participants of the International Junior Jam Münster can take advantage of exclusive DB event tickets
       for long-distance travel throughout Germany (ICE, IC/EC). For more information, see the DB Ticket page.`,
-    image: PrüferImage.src,
-    credit: "manager magazin",
+    image: DBImage.src,
+    credit: "Siemens",
   },
   {
     date: "April 2026",
@@ -76,10 +77,14 @@ const updates = [
 
     <div class="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 md:py-28">
       <div class="max-w-3xl">
-        <div class="flex gap-2 overflow-x-auto pb-2 sm:flex-wrap sm:gap-3 sm:overflow-visible">
-          <span class="chip chip-active shrink-0">SAVE THE DATE</span>
-          <span class="chip shrink-0 bg-white/80 backdrop-blur">{event.date}</span>
-          <span class="chip shrink-0 bg-white/80 backdrop-blur">Münster</span>
+        <div class="flex flex-wrap gap-3">
+          <span class="chip chip-active text-xs sm:text-sm">
+            {event.date}
+          </span>
+
+          <span class="chip bg-white/80 text-xs backdrop-blur sm:text-sm">
+            Münster
+          </span>
         </div>
 
         <h1 class="mt-6 text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
@@ -112,7 +117,7 @@ const updates = [
         </div>
 
         <p class="mt-5 text-sm leading-6 text-white/80">
-          Participation fee and official registration via Indico will be announced soon.
+          15 € Participation fee. The official registration via Indico will be announced soon.
         </p>
 
         <a
