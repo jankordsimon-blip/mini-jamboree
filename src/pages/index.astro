@@ -72,57 +72,66 @@ const updates = [
       class="absolute inset-0 h-full w-full object-cover"
     />
 
-    <div class="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/35 to-white/5"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-950/75 via-slate-950/40 to-white/5"></div>
     <div class="absolute inset-0 bg-emerald-500/10 mix-blend-overlay"></div>
 
-    <div class="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 md:py-28">
+    <div class="relative mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-20 md:py-28">
       <div class="max-w-3xl">
-        <div class="flex flex-wrap gap-3">
-          <span class="chip chip-active text-xs sm:text-sm">
+        <div class="flex flex-wrap gap-2 sm:gap-3">
+          <span class="chip chip-active px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm">
             {event.date}
           </span>
 
-          <span class="chip bg-white/80 text-xs backdrop-blur sm:text-sm">
+          <span class="chip bg-white/80 px-3 py-1.5 text-xs backdrop-blur sm:px-4 sm:py-2 sm:text-sm">
             Münster
           </span>
         </div>
 
-        <h1 class="mt-6 text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
+        <h1 class="mt-5 text-3xl font-extrabold leading-tight tracking-tight text-white sm:mt-6 sm:text-5xl md:text-6xl">
           {event.name}
         </h1>
 
-        <p class="mt-6 max-w-2xl text-base leading-7 text-white/90 sm:text-lg">
+        <p class="mt-4 max-w-2xl text-sm leading-6 text-white/90 sm:mt-6 sm:text-lg sm:leading-7">
           A 3-day meetup for iGEM teams with talks, poster sessions, networking,
           judging sessions, workshops, and panel discussions.
         </p>
 
-        <p class="mt-4 max-w-2xl text-sm leading-6 text-white/80">
+        <p class="mt-3 max-w-2xl text-xs leading-5 text-white/80 sm:mt-4 sm:text-sm sm:leading-6">
           Hosted by the iGEM Münster team, the International Junior Jam 2026 in
           Münster, Germany brings together international iGEM teams for talks,
           workshops, poster sessions, and networking.
         </p>
 
-        <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-          <a class="btn btn-primary w-full text-center sm:w-auto" href="/register">
+        <div class="mt-6 flex flex-col gap-2 sm:mt-8 sm:flex-row sm:flex-wrap sm:gap-3">
+          <a
+            class="btn btn-primary w-full !px-4 !py-2 !text-xs text-center sm:w-auto sm:!px-5 sm:!py-3 sm:!text-sm"
+            href="/register"
+          >
             Interested
           </a>
 
-          <a class="btn btn-secondary w-full bg-white/85 text-center backdrop-blur sm:w-auto" href="/program">
+          <a
+            class="btn btn-secondary w-full bg-white/85 !px-4 !py-2 !text-xs text-center backdrop-blur sm:w-auto sm:!px-5 sm:!py-3 sm:!text-sm"
+            href="/program"
+          >
             Program
           </a>
 
-          <a class="btn btn-secondary w-full bg-white/85 text-center backdrop-blur sm:w-auto" href="/venue">
+          <a
+            class="btn btn-secondary w-full bg-white/85 !px-4 !py-2 !text-xs text-center backdrop-blur sm:w-auto sm:!px-5 sm:!py-3 sm:!text-sm"
+            href="/venue"
+          >
             Venue & travel
           </a>
         </div>
 
-        <p class="mt-5 text-sm leading-6 text-white/80">
+        <p class="mt-4 text-xs leading-5 text-white/80 sm:mt-5 sm:text-sm sm:leading-6">
           15 € Participation fee. The official registration via Indico will be announced soon.
         </p>
 
         <a
           href="#updates"
-          class="relative mt-12 inline-flex items-center gap-2 text-sm font-semibold text-white/90 hover:text-white md:mt-16"
+          class="relative mt-8 inline-flex items-center gap-2 text-xs font-semibold text-white/90 hover:text-white sm:mt-12 sm:text-sm md:mt-16"
         >
           <span>Scroll</span>
           <span aria-hidden="true">↓</span>
