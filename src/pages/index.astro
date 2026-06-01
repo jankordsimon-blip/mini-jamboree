@@ -12,48 +12,47 @@ import PrüferImage from "../assets/news/prüfer 3.jpg";
 const updates = [
   {
     date: "May 2026",
-    title: "Get 10 % of your train ticket",
+    title: "Get 10% off your train ticket",
     text: `Participants of the International Junior Jam Münster can take advantage of exclusive DB event tickets
-      for long-distance travel throughout Germany (ICE, IC/EC). For more information, see the DB Ticket page`,
+      for long-distance travel throughout Germany (ICE, IC/EC). For more information, see the DB Ticket page.`,
     image: PrüferImage.src,
     credit: "manager magazin",
   },
   {
     date: "April 2026",
     title: "The Current State of Biotechnology",
-    text: `We are proud to introduce our newest speaker acquisit. Prof. Dirk Prüfer is a Professor of Plant Biotechnology at the University of Münster and also heads a department at the Fraunhofer Institute for Molecular Biology and Applied Ecology. His research focuses on the biotechnological use of plants, particularly the development of sustainable raw materials. A key area of his work is the production of natural rubber from Russian dandelion as an eco-friendly alternative to tropical rubber. His work bridges basic research and industrial application and has received multiple awards.`,
+    text: `We are proud to introduce our newest speaker acquisition. Prof. Dirk Prüfer is a Professor of Plant Biotechnology at the University of Münster and also heads a department at the Fraunhofer Institute for Molecular Biology and Applied Ecology. His research focuses on the biotechnological use of plants, particularly the development of sustainable raw materials. A key area of his work is the production of natural rubber from Russian dandelion as an eco-friendly alternative to tropical rubber. His work bridges basic research and industrial application and has received multiple awards.`,
     image: PrüferImage.src,
     credit: "manager magazin",
   },
-   {
+  {
     date: "April 2026",
     title: "From Science to Start up - The PEARL story - told by co-founder Dr. Jan Bruder",
-    text: `In his talk, Jan will explore the journey from fundamental research to real-world application, highlighting how ideas can move beyond the lab and into impactful ventures. Focusing on start-ups and spin-offs, he will share insights and lessons learned from his own experience navigating this transition. Using his start-up PEARL Organoids as a case study, he will showcase how cutting-edge science can be transformed into scalable solutions, with a focus on the industrial production of human neural organoids`,
+    text: `In his talk, Jan will explore the journey from fundamental research to real-world application, highlighting how ideas can move beyond the lab and into impactful ventures. Focusing on start-ups and spin-offs, he will share insights and lessons learned from his own experience navigating this transition. Using his start-up PEARL Organoids as a case study, he will showcase how cutting-edge science can be transformed into scalable solutions, with a focus on the industrial production of human neural organoids.`,
     image: neewImage.src,
     credit: "REACH-EUREGIO Start-up Center",
   },
   {
     date: "April 2026",
     title: "Rewriting Photosynthesis for Yield improvement: Chloroplast-Targeted DNA Base Editing",
-    text: `In his talk, Issei Nakazato will highlight how chloroplast-targeted base editors can precisely reprogram photosynthesis for crop improvement. By introducing targeted mutations, his work demonstrates both herbicide resistance and enhanced enzymatic performance. Using Arabidopsis thaliana, these advances translate into increased biomass, showcasing the potential of chloroplast genome engineering for future agriculture`,
+    text: `In his talk, Issei Nakazato will highlight how chloroplast-targeted base editors can precisely reprogram photosynthesis for crop improvement. By introducing targeted mutations, his work demonstrates both herbicide resistance and enhanced enzymatic performance. Using Arabidopsis thaliana, these advances translate into increased biomass, showcasing the potential of chloroplast genome engineering for future agriculture.`,
     image: japanesImage.src,
     credit: "Hiroko Uchida",
   },
-	{
+  {
     date: "March 2026",
     title: "Opening Talk by Prof. Dr. Ing. Jochen Schmid",
     text: `We are excited to announce that our opening talk will be given by Prof. Dr. Ing. Jochen Schmid, a three-time iGEMer and counting. Professor Schmid's specialty is metabolic engineering and microbial polysaccharides, with profound expertise in industry and circular economy.`,
     image: newsImage.src,
     credit: "Uni MS",
   },
-    {
-	date: "March 2026",
+  {
+    date: "March 2026",
     title: "Judging Panel Discussion",
-    text: `What constitutes a good iGEM project? Our judging panel discussion is specifically layed out to answer that question! Sinan Zimmermann and Florian Hänsel, who have prior iGEM and judging experience, will answer all your burning questions. Dr. Sriram Kumar, an expert on safety-related issues, will complement the panel. After this panel, your team will be perfectly prepared for Paris.`,
+    text: `What constitutes a good iGEM project? Our judging panel discussion is specifically laid out to answer that question! Sinan Zimmermann and Florian Hänsel, who have prior iGEM and judging experience, will answer all your burning questions. Dr. Sriram Kumar, an expert on safety-related issues, will complement the panel. After this panel, your team will be perfectly prepared for Paris.`,
     image: newImage.src,
-    credit: "1: iGEM, 2: NTI, 3: Sinan Zimmermann ",
-	},
-    
+    credit: "1: iGEM, 2: NTI, 3: Sinan Zimmermann",
+  },
   {
     date: "March 2026",
     title: "Interest form is now open",
@@ -65,65 +64,73 @@ const updates = [
 ---
 
 <BaseLayout title={event.name}>
-  <main>
-    <section id="hero" class="relative overflow-hidden min-h-screen">
-      <img
-        src={heroImage.src}
-        alt=""
-        class="absolute inset-0 h-full w-full object-cover"
-      />
+  <section id="hero" class="relative min-h-[calc(100svh-73px)] overflow-hidden md:min-h-screen">
+    <img
+      src={heroImage.src}
+      alt=""
+      class="absolute inset-0 h-full w-full object-cover"
+    />
 
-      <div class="absolute inset-0 bg-gradient-to-b from-slate-950/55 via-slate-950/30 to-white/5"></div>
-      <div class="absolute inset-0 bg-emerald-500/10 mix-blend-overlay"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-950/35 to-white/5"></div>
+    <div class="absolute inset-0 bg-emerald-500/10 mix-blend-overlay"></div>
 
-      <div class="relative mx-auto max-w-6xl px-6 py-20 md:py-28">
-        <div class="max-w-3xl">
-          <div class="flex flex-wrap gap-3">
-            <span class="chip chip-active">SAVE THE DATE</span>
-            <span class="chip bg-white/80 backdrop-blur">{event.date}</span>
-            <span class="chip bg-white/80 backdrop-blur">Münster (Muenster)</span>
-          </div>
+    <div class="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20 md:py-28">
+      <div class="max-w-3xl">
+        <div class="flex gap-2 overflow-x-auto pb-2 sm:flex-wrap sm:gap-3 sm:overflow-visible">
+          <span class="chip chip-active shrink-0">SAVE THE DATE</span>
+          <span class="chip shrink-0 bg-white/80 backdrop-blur">{event.date}</span>
+          <span class="chip shrink-0 bg-white/80 backdrop-blur">Münster</span>
+        </div>
 
-          <h1 class="mt-6 text-5xl font-extrabold tracking-tight text-white md:text-6xl">
-            {event.name}
-          </h1>
+        <h1 class="mt-6 text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
+          {event.name}
+        </h1>
 
-          <p class="mt-6 text-lg text-white/90">
-            A 3-day meetup for iGEM teams with talks, poster sessions, networking,
-            judging sessions, workshops, and panel discussions.
-          </p>
+        <p class="mt-6 max-w-2xl text-base leading-7 text-white/90 sm:text-lg">
+          A 3-day meetup for iGEM teams with talks, poster sessions, networking,
+          judging sessions, workshops, and panel discussions.
+        </p>
 
-		  <p class="mt-4 text-sm text-white/80 max-w-2xl">
-          Hosted by the iGEM Münster (iGEM Muenster) team, the International Junior Jam 2026 in Münster, Germany brings together international iGEM teams for talks, workshops, poster sessions, and networking.
-          </p>
+        <p class="mt-4 max-w-2xl text-sm leading-6 text-white/80">
+          Hosted by the iGEM Münster team, the International Junior Jam 2026 in
+          Münster, Germany brings together international iGEM teams for talks,
+          workshops, poster sessions, and networking.
+        </p>
 
-          <div class="mt-8 flex flex-wrap gap-3">
-            <a class="btn btn-primary" href="/register">Interested</a>
-            <a class="btn btn-secondary bg-white/85 backdrop-blur" href="/program">Program</a>
-            <a class="btn btn-secondary bg-white/85 backdrop-blur" href="/venue">Venue & travel</a>
-          </div>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <a class="btn btn-primary w-full text-center sm:w-auto" href="/register">
+            Interested
+          </a>
 
-          <p class="mt-5 text-sm text-white/80">
-            Participation fee and official registration (Indico) will be announced soon.
-          </p>
+          <a class="btn btn-secondary w-full bg-white/85 text-center backdrop-blur sm:w-auto" href="/program">
+            Program
+          </a>
 
-          <a
-            href="#updates"
-            class="relative mt-16 inline-flex items-center gap-2 text-sm font-semibold text-white/90 hover:text-white"
-          >
-            <span>Scroll</span>
-            <span aria-hidden="true">↓</span>
+          <a class="btn btn-secondary w-full bg-white/85 text-center backdrop-blur sm:w-auto" href="/venue">
+            Venue & travel
           </a>
         </div>
+
+        <p class="mt-5 text-sm leading-6 text-white/80">
+          Participation fee and official registration via Indico will be announced soon.
+        </p>
+
+        <a
+          href="#updates"
+          class="relative mt-12 inline-flex items-center gap-2 text-sm font-semibold text-white/90 hover:text-white md:mt-16"
+        >
+          <span>Scroll</span>
+          <span aria-hidden="true">↓</span>
+        </a>
       </div>
-	  <div class="pointer-events-none absolute bottom-4 left-6 text-xs text-white/70 backdrop-blur-sm bg-black/20 px-2 py-1 rounded-md">
-  Photo: Dagmar Schwelle
-     </div>
-
-    </section>
-
-    <div id="updates">
-      <NewsFeed client:load items={updates} />
     </div>
-  </main>
+
+    <div class="pointer-events-none absolute bottom-4 left-4 rounded-md bg-black/20 px-2 py-1 text-xs text-white/70 backdrop-blur-sm sm:left-6">
+      Photo: Dagmar Schwelle
+    </div>
+  </section>
+
+  <div id="updates">
+    <NewsFeed client:load items={updates} />
+  </div>
 </BaseLayout>

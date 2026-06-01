@@ -4,138 +4,253 @@ import { event } from "../config/event";
 ---
 
 <BaseLayout title="Venue & Travel">
-  <section class="mx-auto max-w-6xl px-6 py-16">
-    <h1 class="text-4xl font-extrabold tracking-tight">Venue & Travel</h1>
-    <p class="mt-4 max-w-3xl text-slate-700 dark:text-slate-200">
+  <section class="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-16">
+    <h1 class="text-3xl font-extrabold tracking-tight md:text-4xl">
+      Venue & Travel
+    </h1>
+
+    <p class="mt-4 max-w-3xl text-sm leading-6 text-slate-700 sm:text-base dark:text-slate-200">
       The event takes place in Münster at the University of Münster. Exact rooms/buildings will be published soon.
     </p>
 
-    <div class="mt-10 grid gap-4 md:grid-cols-2">
-      <div class="card card-dark p-6">
-        <h2 class="text-xl font-bold">Location</h2>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">
+    <div class="mt-8 grid gap-4 md:mt-10 md:grid-cols-2">
+      <div class="card card-dark p-5 sm:p-6">
+        <h2 class="text-lg font-bold sm:text-xl">Location</h2>
+
+        <p class="mt-2 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
           {event.location}
         </p>
+
         <p class="mt-3 text-sm text-slate-500 dark:text-slate-400">
           Final address and building details will be shared closer to the event.
         </p>
 
-        <div class="mt-6 flex flex-wrap gap-3">
+        <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <a
-            class="btn btn-secondary"
+            class="btn btn-secondary w-full text-center sm:w-auto"
             href="https://www.google.com/maps/search/?api=1&query=M%C3%BCnster%20University"
             target="_blank"
             rel="noreferrer"
           >
             Open map
           </a>
-          <a class="btn btn-secondary" href="/contact">
+
+          <a
+            class="btn btn-secondary w-full text-center sm:w-auto"
+            href="/contact"
+          >
             Ask a question
           </a>
         </div>
       </div>
 
-      <div class="card card-dark p-6">
-        <h2 class="text-xl font-bold">Getting to Münster</h2>
-        <ul class="mt-3 list-disc space-y-2 pl-5 text-slate-600 dark:text-slate-300">
-          <li>
-  <div class="flex flex-wrap items-center gap-3">
-    <span>
-      <span class="font-semibold text-slate-900 dark:text-white">Train:</span>
-      Münster (Westf) Hbf
-    </span>
+      <div class="card card-dark p-5 sm:p-6">
+        <h2 class="text-lg font-bold sm:text-xl">Getting to Münster</h2>
 
-    <a
-      class="btn btn-primary text-xs shadow-none"
-      href="/DBticket"
-    >
-      Get 10% off your ticket
-    </a>
-  </div>
-</li>
-          <li><span class="font-semibold text-slate-900 dark:text-white">Airports:</span> Düsseldorf (DUS), Dortmund (DTM), Münster/Osnabrück (FMO)</li>
-          <li><span class="font-semibold text-slate-900 dark:text-white">Local:</span> buses, walking, bike-friendly routes</li>
+        <ul class="mt-4 list-disc space-y-3 pl-5 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
+          <li>
+            <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
+              <span>
+                <span class="font-semibold text-slate-900 dark:text-white">Train:</span>
+                Münster (Westf) Hbf
+              </span>
+
+              <a
+                class="btn btn-primary w-fit text-xs shadow-none"
+                href="/DBticket"
+              >
+                Get 10% off your ticket
+              </a>
+            </div>
+          </li>
+
+          <li>
+            <span class="font-semibold text-slate-900 dark:text-white">Airports:</span>
+            Düsseldorf (DUS), Dortmund (DTM), Münster/Osnabrück (FMO)
+          </li>
+
+          <li>
+            <span class="font-semibold text-slate-900 dark:text-white">Local:</span>
+            buses, walking, bike-friendly routes
+          </li>
         </ul>
       </div>
     </div>
 
     <!-- Accommodation Section -->
-    <section class="mt-16">
-      <h2 class="text-2xl font-bold">Accommodation</h2>
-      <p class="mt-2 text-slate-600 dark:text-slate-300">
+    <section class="mt-12 md:mt-16">
+      <h2 class="text-2xl font-bold md:text-3xl">Accommodation</h2>
+
+      <p class="mt-2 max-w-3xl text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
         Here are some recommended places to stay in Münster, sorted by price range.
       </p>
 
-      <!-- ✅ Optional Tip -->
-      <p class="mt-4 text-sm text-slate-500">
+      <p class="mt-4 text-sm leading-6 text-slate-500 dark:text-slate-400">
         💡 Tip: Münster is compact — most locations are reachable by bike or public transport within minutes.
       </p>
 
       <div class="mt-8 grid gap-6 md:grid-cols-3">
-
         <!-- € Budget -->
-        <div class="card card-dark p-6">
+        <div class="card card-dark p-5 sm:p-6">
           <h3 class="text-lg font-semibold">€ Budget</h3>
-          <ul class="mt-4 space-y-3 text-sm text-slate-700 dark:text-slate-300">
+
+          <ul class="mt-4 space-y-3 text-sm leading-6 text-slate-700 dark:text-slate-300">
             <li>
-              🛏️ <a href="https://h-ostel.de/" target="_blank" class="underline hover:text-white">H.ostel Münster</a><br />
+              🛏️
+              <a
+                href="https://h-ostel.de/"
+                target="_blank"
+                rel="noreferrer"
+                class="underline hover:text-slate-900 dark:hover:text-white"
+              >
+                H.ostel Münster
+              </a>
+              <br />
               ~21€/night · 10-bed dorm · very central (Marienplatz)
             </li>
+
             <li>
-              🛏️ <a href="https://sleep-station.de/" target="_blank" class="underline hover:text-white">Sleep Station Hostel</a><br />
+              🛏️
+              <a
+                href="https://sleep-station.de/"
+                target="_blank"
+                rel="noreferrer"
+                class="underline hover:text-slate-900 dark:hover:text-white"
+              >
+                Sleep Station Hostel
+              </a>
+              <br />
               ~28€/night · 6-bed dorm
             </li>
           </ul>
         </div>
 
         <!-- €€ Mid -->
-        <div class="card card-dark p-6">
+        <div class="card card-dark p-5 sm:p-6">
           <h3 class="text-lg font-semibold">€€ Mid-range</h3>
-          <ul class="mt-4 space-y-3 text-sm text-slate-700 dark:text-slate-300">
+
+          <ul class="mt-4 space-y-3 text-sm leading-6 text-slate-700 dark:text-slate-300">
             <li>
-              🏡 <a href="https://www.jgh-muenster.de/" target="_blank" class="underline hover:text-white">Jugendgästehaus Aasee</a><br />
+              🏡
+              <a
+                href="https://www.jgh-muenster.de/"
+                target="_blank"
+                rel="noreferrer"
+                class="underline hover:text-slate-900 dark:hover:text-white"
+              >
+                Jugendgästehaus Aasee
+              </a>
+              <br />
               ~57€/night · 4-bed room · breakfast included
             </li>
+
             <li>
-              🏨 <a href="https://all.accor.com/" target="_blank" class="underline hover:text-white">Ibis Budget Münster City</a><br />
+              🏨
+              <a
+                href="https://all.accor.com/"
+                target="_blank"
+                rel="noreferrer"
+                class="underline hover:text-slate-900 dark:hover:text-white"
+              >
+                Ibis Budget Münster City
+              </a>
+              <br />
               ~57€/night · double room (~28.5€/person)
             </li>
+
             <li>
-              🏨 <a href="https://www.hotelbb.de/" target="_blank" class="underline hover:text-white">B&B Hotel Münster Hafen</a><br />
+              🏨
+              <a
+                href="https://www.hotelbb.de/"
+                target="_blank"
+                rel="noreferrer"
+                class="underline hover:text-slate-900 dark:hover:text-white"
+              >
+                B&B Hotel Münster Hafen
+              </a>
+              <br />
               ~64€/night · double room (~32€/person)
             </li>
+
             <li>
-              🏨 <a href="https://www.hotel-windhorst.de/" target="_blank" class="underline hover:text-white">Hotel Windhorst</a><br />
+              🏨
+              <a
+                href="https://www.hotel-windhorst.de/"
+                target="_blank"
+                rel="noreferrer"
+                class="underline hover:text-slate-900 dark:hover:text-white"
+              >
+                Hotel Windhorst
+              </a>
+              <br />
               ~71€/night · double room (~35.5€/person)
             </li>
+
             <li>
-              🏨 <a href="https://all.accor.com/" target="_blank" class="underline hover:text-white">Ibis Münster City</a><br />
+              🏨
+              <a
+                href="https://all.accor.com/"
+                target="_blank"
+                rel="noreferrer"
+                class="underline hover:text-slate-900 dark:hover:text-white"
+              >
+                Ibis Münster City
+              </a>
+              <br />
               ~75€/night · double room (~37.5€/person)
             </li>
           </ul>
         </div>
 
         <!-- €€€ Premium -->
-        <div class="card card-dark p-6">
+        <div class="card card-dark p-5 sm:p-6">
           <h3 class="text-lg font-semibold">€€€ Premium</h3>
-          <ul class="mt-4 space-y-3 text-sm text-slate-700 dark:text-slate-300">
+
+          <ul class="mt-4 space-y-3 text-sm leading-6 text-slate-700 dark:text-slate-300">
             <li>
-              🏨 <a href="https://www.hotel-conti-muenster.de/" target="_blank" class="underline hover:text-white">Hotel Conti am Hauptbahnhof</a><br />
+              🏨
+              <a
+                href="https://www.hotel-conti-muenster.de/"
+                target="_blank"
+                rel="noreferrer"
+                class="underline hover:text-slate-900 dark:hover:text-white"
+              >
+                Hotel Conti am Hauptbahnhof
+              </a>
+              <br />
               ~107€/night · single room
             </li>
+
             <li>
-              🏨 <a href="https://www.tripinn-hotels.com/" target="_blank" class="underline hover:text-white">Trip Inn Hotel City Münster</a><br />
+              🏨
+              <a
+                href="https://www.tripinn-hotels.com/"
+                target="_blank"
+                rel="noreferrer"
+                class="underline hover:text-slate-900 dark:hover:text-white"
+              >
+                Trip Inn Hotel City Münster
+              </a>
+              <br />
               ~108€/night · single room
             </li>
+
             <li>
-              🏨 <a href="https://www.stadthotel-muenster.de/" target="_blank" class="underline hover:text-white">Stadthotel Münster</a><br />
+              🏨
+              <a
+                href="https://www.stadthotel-muenster.de/"
+                target="_blank"
+                rel="noreferrer"
+                class="underline hover:text-slate-900 dark:hover:text-white"
+              >
+                Stadthotel Münster
+              </a>
+              <br />
               ~137€/night · single room
             </li>
           </ul>
         </div>
-
       </div>
     </section>
-
   </section>
 </BaseLayout>

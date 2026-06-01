@@ -3,82 +3,87 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Program">
-  <section class="mx-auto max-w-6xl px-6 py-16">
-    <h1 class="text-4xl font-extrabold tracking-tight">Program</h1>
-    <p class="mt-4 max-w-3xl text-slate-700 dark:text-slate-200">
+  <section class="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-16">
+    <h1 class="text-3xl font-extrabold tracking-tight md:text-4xl">Program</h1>
+
+    <p class="mt-4 max-w-3xl text-sm leading-6 text-slate-700 sm:text-base dark:text-slate-200">
       The schedule is currently being refined, but the overall structure of the weekend is already taking shape. Explore the key formats below and scroll down for the latest timeline overview.
     </p>
 
-    <div class="mt-8 flex flex-wrap gap-3">
-      <a class="chip" href="#talks">Talks</a>
-      <a class="chip" href="#posters">Posters</a>
-      <a class="chip" href="#workshops">Workshops</a>
-      <a class="chip" href="#panel">Panel</a>
-      <a class="chip" href="#judging">Judging</a>
-      <a class="chip" href="#networking">Networking</a>
-      <a class="chip chip-active" href="#timeline">Timeline</a>
+    <div class="mt-8 flex gap-2 overflow-x-auto pb-2 sm:flex-wrap sm:gap-3 sm:overflow-visible">
+      <a class="chip shrink-0" href="#talks">Talks</a>
+      <a class="chip shrink-0" href="#posters">Posters</a>
+      <a class="chip shrink-0" href="#workshops">Workshops</a>
+      <a class="chip shrink-0" href="#panel">Panel</a>
+      <a class="chip shrink-0" href="#judging">Judging</a>
+      <a class="chip shrink-0" href="#networking">Networking</a>
+      <a class="chip chip-active shrink-0" href="#timeline">Timeline</a>
     </div>
 
-    <div class="mt-10 grid gap-4 md:grid-cols-2">
-      <div id="talks" class="card card-dark p-6">
-        <h2 class="text-xl font-bold">Team talks</h2>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">
+    <div class="mt-8 grid gap-4 md:mt-10 md:grid-cols-2">
+      <div id="talks" class="card card-dark p-5 sm:p-6">
+        <h2 class="text-lg font-bold sm:text-xl">Team talks</h2>
+        <p class="mt-2 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
           Short presentations by participating iGEM teams, including time for questions, transitions, and feedback.
         </p>
       </div>
 
-      <div id="posters" class="card card-dark p-6">
-        <h2 class="text-xl font-bold">Poster session</h2>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">
+      <div id="posters" class="card card-dark p-5 sm:p-6">
+        <h2 class="text-lg font-bold sm:text-xl">Poster session</h2>
+        <p class="mt-2 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
           An interactive poster format for exchanging ideas, discussing projects, and getting direct input from peers and guests.
         </p>
       </div>
 
-      <div id="workshops" class="card card-dark p-6">
-        <h2 class="text-xl font-bold">Workshops</h2>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">
+      <div id="workshops" class="card card-dark p-5 sm:p-6">
+        <h2 class="text-lg font-bold sm:text-xl">Workshops</h2>
+        <p class="mt-2 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
           Hands-on sessions on relevant iGEM topics, skills, and practical aspects of project development and communication.
         </p>
       </div>
 
-      <div id="panel" class="card card-dark p-6">
-        <h2 class="text-xl font-bold">Panel discussions</h2>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">
+      <div id="panel" class="card card-dark p-5 sm:p-6">
+        <h2 class="text-lg font-bold sm:text-xl">Panel discussions</h2>
+        <p class="mt-2 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
           Open discussions with invited guests on judging, science communication, project quality, and the broader iGEM experience.
         </p>
       </div>
 
-      <div id="judging" class="card card-dark p-6">
-        <h2 class="text-xl font-bold">Judging session</h2>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">
+      <div id="judging" class="card card-dark p-5 sm:p-6">
+        <h2 class="text-lg font-bold sm:text-xl">Judging session</h2>
+        <p class="mt-2 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
           A dedicated session focused on judging expectations, feedback culture, and how to prepare effectively for the Grand Jamboree.
         </p>
       </div>
 
-      <div id="networking" class="card card-dark p-6">
-        <h2 class="text-xl font-bold">Networking</h2>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">
+      <div id="networking" class="card card-dark p-5 sm:p-6">
+        <h2 class="text-lg font-bold sm:text-xl">Networking</h2>
+        <p class="mt-2 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
           Time to meet other teams, speakers, and guests in a relaxed setting throughout the weekend.
         </p>
       </div>
     </div>
   </section>
 
-  <section id="timeline" class="mx-auto max-w-5xl px-6 pb-16">
-    <div class="card card-dark p-6 md:p-8">
+  <section id="timeline" class="mx-auto max-w-5xl px-4 pb-10 sm:px-6 md:pb-16">
+    <div class="card card-dark p-5 sm:p-6 md:p-8">
       <div class="mb-8">
         <p class="text-sm font-semibold uppercase tracking-wide text-emerald-600 dark:text-emerald-400">
           Event timeline
         </p>
-        <h2 class="mt-2 text-3xl font-extrabold tracking-tight">Preliminary Schedule Overview</h2>
-        <p class="mt-3 max-w-3xl text-slate-600 dark:text-slate-300">
+
+        <h2 class="mt-2 text-2xl font-extrabold tracking-tight md:text-3xl">
+          Preliminary Schedule Overview
+        </h2>
+
+        <p class="mt-3 max-w-3xl text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
           This timeline reflects the current planning status for the weekend. Individual sessions, timings, and room allocations may still be adjusted.
         </p>
       </div>
 
       <div class="space-y-6">
         <!-- Friday -->
-        <details open class="group rounded-2xl border border-slate-200 bg-white/80 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900/50">
+        <details open class="group rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-sm sm:p-5 dark:border-slate-800 dark:bg-slate-900/50">
           <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
             <div>
               <p class="text-sm font-semibold uppercase tracking-wide text-emerald-600 dark:text-emerald-400">
@@ -91,24 +96,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </span>
           </summary>
 
-          <div class="relative mt-6 pl-8">
-            <div class="absolute left-[11px] top-0 h-full w-px bg-slate-200 dark:bg-slate-700"></div>
+          <div class="relative mt-6 pl-7 sm:pl-8">
+            <div class="absolute left-[10px] top-0 h-full w-px bg-slate-200 sm:left-[11px] dark:bg-slate-700"></div>
 
             <div class="space-y-8">
               <div class="relative">
-                <div class="absolute left-[-32px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-xs text-slate-950 shadow-sm">
+                <div class="absolute left-[-28px] top-1 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-[10px] text-slate-950 shadow-sm sm:left-[-32px] sm:h-6 sm:w-6 sm:text-xs">
                   ⏱
                 </div>
                 <p class="font-semibold text-slate-900 dark:text-white">From 16:00</p>
-                <p class="mt-1 text-slate-600 dark:text-slate-300">Arrival & Check-in</p>
+                <p class="mt-1 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">Arrival & Check-in</p>
               </div>
 
               <div class="relative">
-                <div class="absolute left-[-32px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-xs text-slate-950 shadow-sm">
+                <div class="absolute left-[-28px] top-1 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-[10px] text-slate-950 shadow-sm sm:left-[-32px] sm:h-6 sm:w-6 sm:text-xs">
                   🎤
                 </div>
                 <p class="font-semibold text-slate-900 dark:text-white">17:00</p>
-                <p class="mt-1 text-slate-600 dark:text-slate-300">
+                <p class="mt-1 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
                   Opening session in the lecture hall, welcome remarks, opening talk by Prof. Dr. Jochen Schmid, and an introduction to the weekend program and practical logistics
                 </p>
                 <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
@@ -117,21 +122,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               </div>
 
               <div class="relative">
-                <div class="absolute left-[-32px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-xs text-slate-950 shadow-sm">
+                <div class="absolute left-[-28px] top-1 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-[10px] text-slate-950 shadow-sm sm:left-[-32px] sm:h-6 sm:w-6 sm:text-xs">
                   🧑‍⚖️
                 </div>
                 <p class="font-semibold text-slate-900 dark:text-white">17:30</p>
-                <p class="mt-1 text-slate-600 dark:text-slate-300">
+                <p class="mt-1 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
                   Judge or invited guest session (20 min + 10 min Q&amp;A)
                 </p>
               </div>
 
               <div class="relative">
-                <div class="absolute left-[-32px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-xs text-slate-950 shadow-sm">
+                <div class="absolute left-[-28px] top-1 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-[10px] text-slate-950 shadow-sm sm:left-[-32px] sm:h-6 sm:w-6 sm:text-xs">
                   🌿
                 </div>
                 <p class="font-semibold text-slate-900 dark:text-white">18:15</p>
-                <p class="mt-1 text-slate-600 dark:text-slate-300">
+                <p class="mt-1 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
                   Icebreaker activities and games in the park, followed by dinner
                 </p>
                 <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
@@ -140,11 +145,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               </div>
 
               <div class="relative">
-                <div class="absolute left-[-32px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-xs text-slate-950 shadow-sm">
+                <div class="absolute left-[-28px] top-1 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-[10px] text-slate-950 shadow-sm sm:left-[-32px] sm:h-6 sm:w-6 sm:text-xs">
                   🌃
                 </div>
                 <p class="font-semibold text-slate-900 dark:text-white">From 20:00 / 21:00</p>
-                <p class="mt-1 text-slate-600 dark:text-slate-300">
+                <p class="mt-1 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
                   Continue the evening informally in the city
                 </p>
                 <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
@@ -156,7 +161,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </details>
 
         <!-- Saturday -->
-        <details open class="group rounded-2xl border border-slate-200 bg-white/80 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900/50">
+        <details open class="group rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-sm sm:p-5 dark:border-slate-800 dark:bg-slate-900/50">
           <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
             <div>
               <p class="text-sm font-semibold uppercase tracking-wide text-emerald-600 dark:text-emerald-400">
@@ -169,20 +174,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </span>
           </summary>
 
-          <div class="relative mt-6 pl-8">
-            <div class="absolute left-[11px] top-0 h-full w-px bg-slate-200 dark:bg-slate-700"></div>
+          <div class="relative mt-6 pl-7 sm:pl-8">
+            <div class="absolute left-[10px] top-0 h-full w-px bg-slate-200 sm:left-[11px] dark:bg-slate-700"></div>
 
             <div class="space-y-8">
               <div class="relative">
-                <div class="absolute left-[-32px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-xs text-slate-950 shadow-sm">☀️</div>
+                <div class="absolute left-[-28px] top-1 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-[10px] text-slate-950 shadow-sm sm:left-[-32px] sm:h-6 sm:w-6 sm:text-xs">☀️</div>
                 <p class="font-semibold text-slate-900 dark:text-white">08:30</p>
-                <p class="mt-1 text-slate-600 dark:text-slate-300">Arrival</p>
+                <p class="mt-1 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">Arrival</p>
               </div>
 
               <div class="relative">
-                <div class="absolute left-[-32px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-xs text-slate-950 shadow-sm">📋</div>
+                <div class="absolute left-[-28px] top-1 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-[10px] text-slate-950 shadow-sm sm:left-[-32px] sm:h-6 sm:w-6 sm:text-xs">📋</div>
                 <p class="font-semibold text-slate-900 dark:text-white">09:00</p>
-                <p class="mt-1 text-slate-600 dark:text-slate-300">
+                <p class="mt-1 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
                   Welcome session, overview of the day, and guest welcome
                 </p>
                 <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
@@ -191,25 +196,25 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               </div>
 
               <div class="relative">
-                <div class="absolute left-[-32px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-xs text-slate-950 shadow-sm">🎙️</div>
+                <div class="absolute left-[-28px] top-1 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-[10px] text-slate-950 shadow-sm sm:left-[-32px] sm:h-6 sm:w-6 sm:text-xs">🎙️</div>
                 <p class="font-semibold text-slate-900 dark:text-white">09:30</p>
-                <p class="mt-1 text-slate-600 dark:text-slate-300">
+                <p class="mt-1 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
                   Speaker Session 1: Dr. Jan Bruder (20 min + 10 min Q&amp;A)
                 </p>
               </div>
 
               <div class="relative">
-                <div class="absolute left-[-32px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-xs text-slate-950 shadow-sm">🎙️</div>
+                <div class="absolute left-[-28px] top-1 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-[10px] text-slate-950 shadow-sm sm:left-[-32px] sm:h-6 sm:w-6 sm:text-xs">🎙️</div>
                 <p class="font-semibold text-slate-900 dark:text-white">10:00</p>
-                <p class="mt-1 text-slate-600 dark:text-slate-300">
+                <p class="mt-1 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
                   Speaker Session 2 (20 min + 10 min Q&amp;A)
                 </p>
               </div>
 
               <div class="relative">
-                <div class="absolute left-[-32px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-xs text-slate-950 shadow-sm">☕</div>
+                <div class="absolute left-[-28px] top-1 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-[10px] text-slate-950 shadow-sm sm:left-[-32px] sm:h-6 sm:w-6 sm:text-xs">☕</div>
                 <p class="font-semibold text-slate-900 dark:text-white">10:30</p>
-                <p class="mt-1 text-slate-600 dark:text-slate-300">
+                <p class="mt-1 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
                   Coffee break and room reset
                 </p>
                 <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
@@ -218,9 +223,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               </div>
 
               <div class="relative">
-                <div class="absolute left-[-32px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-xs text-slate-950 shadow-sm">🗣️</div>
+                <div class="absolute left-[-28px] top-1 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-[10px] text-slate-950 shadow-sm sm:left-[-32px] sm:h-6 sm:w-6 sm:text-xs">🗣️</div>
                 <p class="font-semibold text-slate-900 dark:text-white">11:00</p>
-                <p class="mt-1 text-slate-600 dark:text-slate-300">
+                <p class="mt-1 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
                   Optional additional speaker slot
                 </p>
                 <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
@@ -229,23 +234,23 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               </div>
 
               <div class="relative">
-                <div class="absolute left-[-32px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-xs text-slate-950 shadow-sm">💬</div>
+                <div class="absolute left-[-28px] top-1 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-[10px] text-slate-950 shadow-sm sm:left-[-32px] sm:h-6 sm:w-6 sm:text-xs">💬</div>
                 <p class="font-semibold text-slate-900 dark:text-white">11:30</p>
-                <p class="mt-1 text-slate-600 dark:text-slate-300">
+                <p class="mt-1 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
                   Judging panel discussion and audience Q&amp;A
                 </p>
               </div>
 
               <div class="relative">
-                <div class="absolute left-[-32px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-xs text-slate-950 shadow-sm">🍽️</div>
+                <div class="absolute left-[-28px] top-1 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-[10px] text-slate-950 shadow-sm sm:left-[-32px] sm:h-6 sm:w-6 sm:text-xs">🍽️</div>
                 <p class="font-semibold text-slate-900 dark:text-white">12:30</p>
-                <p class="mt-1 text-slate-600 dark:text-slate-300">Lunch break</p>
+                <p class="mt-1 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">Lunch break</p>
               </div>
 
               <div class="relative">
-                <div class="absolute left-[-32px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-xs text-slate-950 shadow-sm">🧪</div>
+                <div class="absolute left-[-28px] top-1 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-[10px] text-slate-950 shadow-sm sm:left-[-32px] sm:h-6 sm:w-6 sm:text-xs">🧪</div>
                 <p class="font-semibold text-slate-900 dark:text-white">13:30</p>
-                <p class="mt-1 text-slate-600 dark:text-slate-300">
+                <p class="mt-1 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
                   Team Presentations — Blocks I and II
                 </p>
                 <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
@@ -257,30 +262,30 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               </div>
 
               <div class="relative">
-                <div class="absolute left-[-32px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-xs text-slate-950 shadow-sm">☕</div>
+                <div class="absolute left-[-28px] top-1 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-[10px] text-slate-950 shadow-sm sm:left-[-32px] sm:h-6 sm:w-6 sm:text-xs">☕</div>
                 <p class="font-semibold text-slate-900 dark:text-white">15:00</p>
-                <p class="mt-1 text-slate-600 dark:text-slate-300">Short break</p>
+                <p class="mt-1 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">Short break</p>
               </div>
 
               <div class="relative">
-                <div class="absolute left-[-32px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-xs text-slate-950 shadow-sm">🛠️</div>
+                <div class="absolute left-[-28px] top-1 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-[10px] text-slate-950 shadow-sm sm:left-[-32px] sm:h-6 sm:w-6 sm:text-xs">🛠️</div>
                 <p class="font-semibold text-slate-900 dark:text-white">15:30</p>
-                <p class="mt-1 text-slate-600 dark:text-slate-300">Workshops (approx. 1 hour)</p>
+                <p class="mt-1 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">Workshops (approx. 1 hour)</p>
               </div>
 
               <div class="relative">
-                <div class="absolute left-[-32px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-xs text-slate-950 shadow-sm">🧾</div>
+                <div class="absolute left-[-28px] top-1 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-[10px] text-slate-950 shadow-sm sm:left-[-32px] sm:h-6 sm:w-6 sm:text-xs">🧾</div>
                 <p class="font-semibold text-slate-900 dark:text-white">16:45</p>
-                <p class="mt-1 text-slate-600 dark:text-slate-300">Poster session</p>
+                <p class="mt-1 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">Poster session</p>
                 <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
                   Possible format: two 40-minute rounds with a short 10-minute break in between
                 </p>
               </div>
 
               <div class="relative">
-                <div class="absolute left-[-32px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-xs text-slate-950 shadow-sm">🔥</div>
+                <div class="absolute left-[-28px] top-1 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-[10px] text-slate-950 shadow-sm sm:left-[-32px] sm:h-6 sm:w-6 sm:text-xs">🔥</div>
                 <p class="font-semibold text-slate-900 dark:text-white">18:00</p>
-                <p class="mt-1 text-slate-600 dark:text-slate-300">
+                <p class="mt-1 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
                   Closing session followed by dinner
                 </p>
                 <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
@@ -289,9 +294,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               </div>
 
               <div class="relative">
-                <div class="absolute left-[-32px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-xs text-slate-950 shadow-sm">🍻</div>
+                <div class="absolute left-[-28px] top-1 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-[10px] text-slate-950 shadow-sm sm:left-[-32px] sm:h-6 sm:w-6 sm:text-xs">🍻</div>
                 <p class="font-semibold text-slate-900 dark:text-white">20:00</p>
-                <p class="mt-1 text-slate-600 dark:text-slate-300">Pub quiz & open-end social evening</p>
+                <p class="mt-1 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">Pub quiz & open-end social evening</p>
                 <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
                   Possible venue: Bunter Vogel, upper floor with bar
                 </p>
@@ -301,7 +306,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </details>
 
         <!-- Sunday -->
-        <details open class="group rounded-2xl border border-slate-200 bg-white/80 p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900/50">
+        <details open class="group rounded-2xl border border-slate-200 bg-white/80 p-4 shadow-sm sm:p-5 dark:border-slate-800 dark:bg-slate-900/50">
           <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
             <div>
               <p class="text-sm font-semibold uppercase tracking-wide text-emerald-600 dark:text-emerald-400">
@@ -314,20 +319,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </span>
           </summary>
 
-          <div class="relative mt-6 pl-8">
-            <div class="absolute left-[11px] top-0 h-full w-px bg-slate-200 dark:bg-slate-700"></div>
+          <div class="relative mt-6 pl-7 sm:pl-8">
+            <div class="absolute left-[10px] top-0 h-full w-px bg-slate-200 sm:left-[11px] dark:bg-slate-700"></div>
 
             <div class="space-y-8">
               <div class="relative">
-                <div class="absolute left-[-32px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-xs text-slate-950 shadow-sm">🥐</div>
+                <div class="absolute left-[-28px] top-1 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-[10px] text-slate-950 shadow-sm sm:left-[-32px] sm:h-6 sm:w-6 sm:text-xs">🥐</div>
                 <p class="font-semibold text-slate-900 dark:text-white">10:00</p>
-                <p class="mt-1 text-slate-600 dark:text-slate-300">Breakfast</p>
+                <p class="mt-1 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">Breakfast</p>
               </div>
 
               <div class="relative">
-                <div class="absolute left-[-32px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-xs text-slate-950 shadow-sm">🏆</div>
+                <div class="absolute left-[-28px] top-1 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-[10px] text-slate-950 shadow-sm sm:left-[-32px] sm:h-6 sm:w-6 sm:text-xs">🏆</div>
                 <p class="font-semibold text-slate-900 dark:text-white">11:00</p>
-                <p class="mt-1 text-slate-600 dark:text-slate-300">
+                <p class="mt-1 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
                   Official closing session, possible additional speaker slot, awards ceremony, and feedback
                 </p>
                 <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">
@@ -336,9 +341,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               </div>
 
               <div class="relative">
-                <div class="absolute left-[-32px] top-1 flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 text-xs text-slate-950 shadow-sm">👋</div>
+                <div class="absolute left-[-28px] top-1 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500 text-[10px] text-slate-950 shadow-sm sm:left-[-32px] sm:h-6 sm:w-6 sm:text-xs">👋</div>
                 <p class="font-semibold text-slate-900 dark:text-white">From 12:30</p>
-                <p class="mt-1 text-slate-600 dark:text-slate-300">Departure</p>
+                <p class="mt-1 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">Departure</p>
               </div>
             </div>
           </div>

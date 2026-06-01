@@ -8,12 +8,23 @@
 
 html {
   font-family: var(--font-sans);
+  scroll-behavior: smooth;
 }
 
 /* iGEM-like heading feel */
-h1 { font-weight: 800; letter-spacing: -0.02em; }
-h2 { font-weight: 700; letter-spacing: -0.01em; }
-h3 { font-weight: 700; }
+h1 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-weight: 700;
+}
 
 /* Stronger green accent wash (light) */
 body {
@@ -28,33 +39,45 @@ body {
   .card {
     @apply rounded-2xl border border-slate-200 bg-white shadow-sm;
   }
+
   .card-dark {
     @apply dark:border-slate-800 dark:bg-slate-900/40;
   }
 
-  /* Raised button -> pressed on hover/active (EBI-like) */
+  /* Raised button -> pressed on hover/active */
   .btn {
-    @apply inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-semibold transition;
+    @apply inline-flex items-center justify-center rounded-xl px-5 py-3 text-center text-sm font-semibold transition;
     @apply shadow-[0_10px_0_0_rgba(15,23,42,0.22)] translate-y-0;
   }
+
   .btn:hover {
     @apply translate-y-[2px] shadow-[0_8px_0_0_rgba(15,23,42,0.22)];
   }
+
   .btn:active {
     @apply translate-y-[6px] shadow-[0_4px_0_0_rgba(15,23,42,0.22)];
+  }
+
+  .btn.shadow-none,
+  .btn.shadow-none:hover,
+  .btn.shadow-none:active {
+    box-shadow: none;
+    transform: translateY(0);
   }
 
   .btn-primary {
     @apply bg-emerald-500 text-slate-950 hover:bg-emerald-400;
   }
+
   .btn-secondary {
     @apply border border-slate-200 bg-white text-slate-900 hover:bg-slate-50;
   }
 
   .chip {
-    @apply inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700;
+    @apply inline-flex items-center whitespace-nowrap rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700;
     @apply hover:bg-slate-50;
   }
+
   .chip-active {
     @apply border-emerald-400 bg-emerald-500 text-slate-950;
     @apply hover:bg-emerald-400;

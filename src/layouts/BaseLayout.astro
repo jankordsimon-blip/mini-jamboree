@@ -15,50 +15,59 @@ const { title = "Mini Jamboree" } = Astro.props;
 
     <!-- SEO -->
     <title>{title} | iGEM Münster Junior Jam 2026</title>
-    <meta name="description" content="Join the iGEM Münster Junior Jam 2026 – a 3-day international meetup with talks, workshops, poster sessions and networking for iGEM teams." />
+    <meta
+      name="description"
+      content="Join the iGEM Münster Junior Jam 2026 – a 3-day international meetup with talks, workshops, poster sessions and networking for iGEM teams."
+    />
     <link rel="canonical" href="https://igem-muenster-juniorjam.com" />
 
     <!-- Open Graph (for sharing & SEO) -->
     <meta property="og:title" content="iGEM Münster Junior Jam 2026" />
-    <meta property="og:description" content="International iGEM meetup in Münster with talks, workshops and networking." />
+    <meta
+      property="og:description"
+      content="International iGEM meetup in Münster with talks, workshops and networking."
+    />
     <meta property="og:url" content="https://igem-muenster-juniorjam.com" />
     <meta property="og:type" content="website" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="iGEM Münster Junior Jam 2026" />
-    <meta name="twitter:description" content="International iGEM meetup in Münster with talks, workshops and networking." />
+    <meta
+      name="twitter:description"
+      content="International iGEM meetup in Münster with talks, workshops and networking."
+    />
 
     <script type="application/ld+json">
-  {JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Event",
-    "name": "iGEM Münster Junior Jam 2026",
-    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "startDate": "2026-07-10",
-    "endDate": "2026-07-12",
-    "location": {
-      "@type": "Place",
-      "name": "University of Münster",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Münster",
-        "addressCountry": "DE"
-      }
-    },
-    "image": [
-      "https://igem-muenster-juniorjam.com"
-    ],
-    "description": "The iGEM Münster (iGEM Muenster) Junior Jam 2026 is a 3-day international meetup with talks, workshops, poster sessions and networking for iGEM teams.",
-    "organizer": {
-      "@type": "Organization",
-      "name": "iGEM Münster",
-      "url": "https://igem-muenster-juniorjam.com"
-    },
-    "url": "https://igem-muenster-juniorjam.com"
-  })}
-</script>
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "iGEM Münster Junior Jam 2026",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "startDate": "2026-07-10",
+        "endDate": "2026-07-12",
+        "location": {
+          "@type": "Place",
+          "name": "University of Münster",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Münster",
+            "addressCountry": "DE"
+          }
+        },
+        "image": [
+          "https://igem-muenster-juniorjam.com"
+        ],
+        "description": "The iGEM Münster (iGEM Muenster) Junior Jam 2026 is a 3-day international meetup with talks, workshops, poster sessions and networking for iGEM teams.",
+        "organizer": {
+          "@type": "Organization",
+          "name": "iGEM Münster",
+          "url": "https://igem-muenster-juniorjam.com"
+        },
+        "url": "https://igem-muenster-juniorjam.com"
+      })}
+    </script>
 
     <!-- Inter Variable (iGEM-like) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -71,18 +80,22 @@ const { title = "Mini Jamboree" } = Astro.props;
     <script>
       (function () {
         const stored = localStorage.getItem("theme");
-        const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const prefersDark =
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
         const theme = stored || (prefersDark ? "dark" : "light");
         document.documentElement.classList.toggle("dark", theme === "dark");
       })();
     </script>
   </head>
 
-  <body class="min-h-screen bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+  <body class="min-h-screen overflow-x-hidden bg-white text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
     <Nav />
+
     <main>
       <slot />
     </main>
+
     <Footer />
   </body>
 </html>

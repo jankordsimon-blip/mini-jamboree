@@ -14,42 +14,66 @@ const teams = teamsRaw
 ---
 
 <BaseLayout title="Register interest">
-  <section class="mx-auto max-w-6xl px-6 py-16">
-    <h1 class="text-4xl font-extrabold tracking-tight">Expression of Interest</h1>
-    <p class="mt-4 max-w-3xl text-slate-700 dark:text-slate-200">
+  <section class="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-16">
+    <h1 class="text-3xl font-extrabold tracking-tight md:text-4xl">
+      Expression of Interest
+    </h1>
+
+    <p class="mt-4 max-w-3xl text-sm leading-6 text-slate-700 sm:text-base dark:text-slate-200">
       Leave your details here. We’ll notify you when official registration via Indico opens.
     </p>
 
-    <div class="mt-10 grid gap-6 lg:grid-cols-5">
+    <div class="mt-8 grid gap-6 lg:mt-10 lg:grid-cols-5">
       <!-- Info column -->
       <div class="lg:col-span-2">
-        <div class="card card-dark p-6">
-          <h2 class="text-xl font-bold">What happens next?</h2>
-          <ul class="mt-4 list-disc space-y-2 pl-5 text-slate-600 dark:text-slate-300">
-            <li>We collect your details to coordinate the event and share updates.</li>
-            <li>Participation fee is <span class="font-semibold text-slate-900 dark:text-white">TBA</span>.</li>
-            <li>Official registration will be handled via <span class="font-semibold text-slate-900 dark:text-white">Indico</span> (link will be added later).</li>
+        <div class="card card-dark p-5 sm:p-6">
+          <h2 class="text-lg font-bold sm:text-xl">What happens next?</h2>
+
+          <ul class="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
+            <li>
+              We collect your details to coordinate the event and share updates.
+            </li>
+
+            <li>
+              Participation fee is
+              <span class="font-semibold text-slate-900 dark:text-white">
+                15 €
+              </span>.
+            </li>
+
+            <li>
+              Official registration will be handled via
+              <span class="font-semibold text-slate-900 dark:text-white">
+                Indico
+              </span>
+              <!-- link will be added later -->
+              .
+            </li>
           </ul>
 
           <div class="mt-6 h-px w-full bg-slate-200 dark:bg-slate-800"></div>
 
-          <h3 class="mt-6 text-sm font-semibold text-slate-900 dark:text-white">Event</h3>
-          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
-            <span class="font-semibold text-slate-900 dark:text-white">{event.date}</span>
+          <h3 class="mt-6 text-sm font-semibold text-slate-900 dark:text-white">
+            Event
+          </h3>
+
+          <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
+            <span class="font-semibold text-slate-900 dark:text-white">
+              {event.date}
+            </span>
             <span class="px-2">·</span>
             <span>{event.location}</span>
           </p>
 
-          <p class="mt-4 text-xs text-slate-500 dark:text-slate-400">
+          <p class="mt-4 text-xs leading-5 text-slate-500 dark:text-slate-400">
             By submitting, you agree that we store your details to contact you about this event.
           </p>
         </div>
       </div>
 
       <!-- Form column -->
-      <div class="lg:col-span-3">
-
-        <p class="mb-6 text-lg font-semibold text-slate-900 dark:text-white">
+      <div class="min-w-0 lg:col-span-3">
+        <p class="mb-6 text-base font-semibold leading-6 text-slate-900 sm:text-lg dark:text-white">
           If only one person registers, please include the total number of interested team members in parentheses, behind your name.
         </p>
 

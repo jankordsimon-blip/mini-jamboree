@@ -3,8 +3,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="DB Ticket">
-  <section class="mx-auto max-w-5xl px-6 py-14">
-    <h1 class="text-3xl font-extrabold tracking-tight">
+  <section class="mx-auto max-w-5xl px-4 py-10 sm:px-6 md:py-14">
+    <h1 class="text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl">
       Always a good move: Travel by train to our event
     </h1>
 
@@ -13,11 +13,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       for long-distance travel throughout Germany (ICE, IC/EC).
     </p>
 
-    <div class="mt-10 grid gap-4">
-      <div class="card card-dark p-6">
+    <div class="mt-8 grid gap-4 md:mt-10">
+      <div class="card card-dark p-5 sm:p-6">
         <h2 class="text-lg font-bold">Your advantages</h2>
 
-        <ul class="mt-4 list-disc space-y-3 pl-6 text-sm leading-6 text-slate-600 dark:text-slate-300">
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-600 sm:space-y-3 sm:pl-6 dark:text-slate-300">
           <li>
             <strong class="font-bold text-slate-900 dark:text-white">
               Up to 10% price advantage
@@ -46,87 +46,88 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           </li>
         </ul>
       </div>
-<div class="card card-dark p-6">
-  <h2 class="text-lg font-bold">Booking links</h2>
 
-  <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
-    Book online now, discover all DB event offers for your preferred route and secure your
-    discounted ticket.
-  </p>
+      <div class="card card-dark p-5 sm:p-6">
+        <h2 class="text-lg font-bold">Booking links</h2>
 
-  <div class="mt-6 flex flex-wrap gap-3">
-    <a
-      class="btn btn-primary text-sm"
-      href="https://www.eventanreise-bahn.de/?event=54787&language=de"
-      target="_blank"
-      rel="noreferrer"
-    >
-      German booking page
-    </a>
+        <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
+          Book online now, discover all DB event offers for your preferred route and secure your
+          discounted ticket.
+        </p>
 
-    <a
-      class="btn btn-secondary text-sm"
-      href="https://www.eventanreise-bahn.de/?event=54787&language=en"
-      target="_blank"
-      rel="noreferrer"
-    >
-      English booking page
-    </a>
-  </div>
+        <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <a
+            class="btn btn-primary w-full text-center text-sm sm:w-auto"
+            href="https://www.eventanreise-bahn.de/?event=54787&language=de"
+            target="_blank"
+            rel="noreferrer"
+          >
+            German booking page
+          </a>
 
-  <p class="mt-4 text-xs text-slate-500 dark:text-slate-400">
-    Both links open in a new tab.
-  </p>
+          <a
+            class="btn btn-primary w-full text-center text-sm sm:w-auto"
+            href="https://www.eventanreise-bahn.de/?event=54787&language=en"
+            target="_blank"
+            rel="noreferrer"
+          >
+            English booking page
+          </a>
+        </div>
 
-  <p class="mt-4 text-sm leading-6 text-slate-600 dark:text-slate-300">
-    FAQ:{" "}
-    <a
-      class="underline hover:text-slate-900 dark:hover:text-white"
-      href="https://www.bahn.de/bahnbusiness/faq/gk/angebot/eventangebote/reisende"
-      target="_blank"
-      rel="noreferrer"
-    >
-      DB event ticket FAQ
-    </a>
-  </p>
-</div>
+        <p class="mt-4 text-xs text-slate-500 dark:text-slate-400">
+          Both links open in a new tab.
+        </p>
 
-   <div class="card card-dark p-6">
-  <h2 class="text-lg font-bold">Restrictions</h2>
+        <p class="mt-4 text-sm leading-6 text-slate-600 dark:text-slate-300">
+          FAQ:{" "}
+          <a
+            class="underline hover:text-slate-900 dark:hover:text-white"
+            href="https://www.bahn.de/bahnbusiness/faq/gk/angebot/eventangebote/reisende"
+            target="_blank"
+            rel="noreferrer"
+          >
+            DB event ticket FAQ
+          </a>
+        </p>
+      </div>
 
-  <ul class="mt-4 list-disc space-y-2 pl-6 text-sm leading-6 text-slate-600 dark:text-slate-300">
-    <li>
-      <strong class="font-bold text-slate-900 dark:text-white">
-        Valid only for long-distance travel
-      </strong>
-      within Germany using ICE, IC or EC trains.
-    </li>
+      <div class="card card-dark p-5 sm:p-6">
+        <h2 class="text-lg font-bold">Restrictions</h2>
 
-    <li>
-      <strong class="font-bold text-slate-900 dark:text-white">
-        The discount only applies for train rides between the 8th until the 14th of June.
-      </strong>
-    </li>
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-600 sm:pl-6 dark:text-slate-300">
+          <li>
+            <strong class="font-bold text-slate-900 dark:text-white">
+              Valid only for long-distance travel
+            </strong>
+            within Germany using ICE, IC or EC trains.
+          </li>
 
-    <li>
-      <strong class="font-bold text-slate-900 dark:text-white">
-        The train ticket is only valid, together with the event ticket. 
-      </strong>
-    </li>
+          <li>
+            <strong class="font-bold text-slate-900 dark:text-white">
+              The discount only applies for train rides between the 8th and the 14th of June.
+            </strong>
+          </li>
 
-    <li>
-      <strong class="font-bold text-slate-900 dark:text-white">
-        Availability may depend on route and travel date.
-      </strong>
-    </li>
+          <li>
+            <strong class="font-bold text-slate-900 dark:text-white">
+              The train ticket is only valid together with the event ticket.
+            </strong>
+          </li>
 
-    <li>
-      <strong class="font-bold text-slate-900 dark:text-white">
-        Booking conditions of Deutsche Bahn apply.
-      </strong>
-    </li>
-  </ul>
-</div>
+          <li>
+            <strong class="font-bold text-slate-900 dark:text-white">
+              Availability may depend on route and travel date.
+            </strong>
+          </li>
+
+          <li>
+            <strong class="font-bold text-slate-900 dark:text-white">
+              Booking conditions of Deutsche Bahn apply.
+            </strong>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 </BaseLayout>

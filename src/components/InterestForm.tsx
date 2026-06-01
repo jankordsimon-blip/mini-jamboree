@@ -17,7 +17,6 @@ export default function InterestForm({ endpointUrl, teams }: Props) {
   const isNotListed = team === "Not listed";
 
   const teamOptions = useMemo(() => {
-    // ensure Not listed exists as last option
     const cleaned = teams.map((t) => t.trim()).filter(Boolean);
     const withoutNotListed = cleaned.filter((t) => t !== "Not listed");
     return [...withoutNotListed.sort((a, b) => a.localeCompare(b)), "Not listed"];
@@ -25,6 +24,9 @@ export default function InterestForm({ endpointUrl, teams }: Props) {
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
+
+    if (status === "submitting") return;
+
     setStatus("submitting");
     setErrorMsg("");
 
@@ -43,20 +45,24 @@ export default function InterestForm({ endpointUrl, teams }: Props) {
         redirect: "follow",
       });
 
-      // Apps Script sometimes responds with 200 + JSON, sometimes text; we handle both.
       const text = await res.text();
-      if (!res.ok) throw new Error(`HTTP ${res.status}: ${text.slice(0, 200)}`);
+
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}: ${text.slice(0, 200)}`);
+      }
 
       let ok = false;
+
       try {
         const json = JSON.parse(text);
         ok = Boolean(json?.ok);
       } catch {
-        // if not JSON, still accept success on 200
         ok = true;
       }
 
-      if (!ok) throw new Error(text);
+      if (!ok) {
+        throw new Error(text);
+      }
 
       setStatus("success");
     } catch (err: any) {
@@ -67,19 +73,22 @@ export default function InterestForm({ endpointUrl, teams }: Props) {
 
   if (status === "success") {
     return (
-      <div className="rounded-2xl border bg-white p-6">
-        <h2 className="text-xl font-semibold">You're on the list!</h2>
+      <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6 dark:border-slate-800 dark:bg-slate-900/40">
+        <h2 className="text-lg font-semibold text-slate-900 sm:text-xl dark:text-white">
+          You're on the list!
+        </h2>
 
-        <p className="mt-2 text-slate-600">
+        <p className="mt-2 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
           Thanks for your interest. We’ll notify you as soon as official registration opens.
         </p>
 
-        <p className="mt-3 font-semibold text-slate-900">
-          Important: Your participation is only confirmed after official registration via Indico. You will receive an email once registration opens.
+        <p className="mt-3 text-sm font-semibold leading-6 text-slate-900 sm:text-base dark:text-white">
+          Important: Your participation is only confirmed after official registration via Indico.
+          You will receive an email once registration opens.
         </p>
 
         <button
-          className="mt-6 rounded-lg border px-4 py-2 hover:bg-slate-50"
+          className="btn btn-secondary mt-6 w-full text-center sm:w-auto"
           onClick={() => {
             setName("");
             setEmail("");
@@ -96,12 +105,18 @@ export default function InterestForm({ endpointUrl, teams }: Props) {
   }
 
   return (
-    <form onSubmit={onSubmit} className="rounded-2xl border bg-white p-6 shadow-sm">
+    <form
+      onSubmit={onSubmit}
+      className="min-w-0 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6 dark:border-slate-800 dark:bg-slate-900/40"
+    >
       <div className="grid gap-6">
-        <div>
-          <label className="text-sm font-medium">Full name *</label>
+        <div className="min-w-0">
+          <label className="text-sm font-medium text-slate-900 dark:text-white">
+            Full name *
+          </label>
+
           <input
-            className="mt-2 w-full rounded-lg border px-3 py-2 outline-none focus:border-slate-400"
+            className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 outline-none focus:border-slate-500 sm:text-base dark:border-slate-700 dark:bg-slate-950 dark:text-white dark:focus:border-slate-400"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
@@ -109,10 +124,13 @@ export default function InterestForm({ endpointUrl, teams }: Props) {
           />
         </div>
 
-        <div>
-          <label className="text-sm font-medium">Email *</label>
+        <div className="min-w-0">
+          <label className="text-sm font-medium text-slate-900 dark:text-white">
+            Email *
+          </label>
+
           <input
-            className="mt-2 w-full rounded-lg border px-3 py-2 outline-none focus:border-slate-400"
+            className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 outline-none focus:border-slate-500 sm:text-base dark:border-slate-700 dark:bg-slate-950 dark:text-white dark:focus:border-slate-400"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -121,10 +139,13 @@ export default function InterestForm({ endpointUrl, teams }: Props) {
           />
         </div>
 
-        <div>
-          <label className="text-sm font-medium">iGEM Team *</label>
+        <div className="min-w-0">
+          <label className="text-sm font-medium text-slate-900 dark:text-white">
+            iGEM Team *
+          </label>
+
           <select
-            className="mt-2 w-full rounded-lg border bg-white px-3 py-2 outline-none focus:border-slate-400"
+            className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 outline-none focus:border-slate-500 sm:text-base dark:border-slate-700 dark:bg-slate-950 dark:text-white dark:focus:border-slate-400"
             value={team}
             onChange={(e) => setTeam(e.target.value)}
             required
@@ -132,6 +153,7 @@ export default function InterestForm({ endpointUrl, teams }: Props) {
             <option value="" disabled>
               Select a team…
             </option>
+
             {teamOptions.map((t) => (
               <option key={t} value={t}>
                 {t}
@@ -141,10 +163,13 @@ export default function InterestForm({ endpointUrl, teams }: Props) {
         </div>
 
         {isNotListed && (
-          <div>
-            <label className="text-sm font-medium">Your team/university (not listed) *</label>
+          <div className="min-w-0">
+            <label className="text-sm font-medium text-slate-900 dark:text-white">
+              Your team/university, if not listed *
+            </label>
+
             <input
-              className="mt-2 w-full rounded-lg border px-3 py-2 outline-none focus:border-slate-400"
+              className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 outline-none focus:border-slate-500 sm:text-base dark:border-slate-700 dark:bg-slate-950 dark:text-white dark:focus:border-slate-400"
               value={teamNotListed}
               onChange={(e) => setTeamNotListed(e.target.value)}
               required
@@ -153,21 +178,21 @@ export default function InterestForm({ endpointUrl, teams }: Props) {
         )}
 
         {status === "error" && (
-          <div className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-800">
+          <div className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm leading-6 text-red-800">
             <div className="font-medium">Submission failed</div>
             <div className="mt-1 break-words">{errorMsg}</div>
           </div>
         )}
 
         <button
-          className="rounded-lg bg-black px-5 py-3 text-white hover:bg-slate-800 disabled:opacity-60"
+          className="btn btn-primary w-full text-center disabled:pointer-events-none disabled:opacity-60 sm:w-auto"
           type="submit"
           disabled={status === "submitting"}
         >
           {status === "submitting" ? "Submitting…" : "Submit interest"}
         </button>
 
-        <p className="text-xs text-slate-500">
+        <p className="text-xs leading-5 text-slate-500 dark:text-slate-400">
           By submitting, you agree that we store your details to contact you about this event.
         </p>
       </div>
