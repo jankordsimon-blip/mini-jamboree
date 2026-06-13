@@ -1,0 +1,245 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const veggieRolls = [
+  {
+    name: "Hausmeisterin",
+    english: "Caretaker",
+    description:
+      "Salad mix with iceberg lettuce, cabbage & mixed greens, avocado hummus, tomato-cucumber salad, corn, yogurt-mint sauce and veggie kebab.",
+  },
+  {
+    name: "Feuerwehrfrau",
+    english: "Firefighter",
+    description:
+      "Salad mix with iceberg lettuce, cabbage & mixed greens, chili hummus, mango chutney, jalapeños, garlic sauce and veggie shawarma.",
+  },
+  {
+    name: "Langzeitstudent",
+    english: "Long-term student",
+    description:
+      "Salad mix with iceberg lettuce, cabbage & mixed greens, peanut hummus, mango chutney, cucumber, mango-curry sauce and falafel.",
+  },
+  {
+    name: "Pilot",
+    english: "Pilot",
+    description:
+      "Salad mix with iceberg lettuce, cabbage & mixed greens, classic hummus, cucumber, couscous salad, sweet chili sauce and veggie kebab.",
+  },
+];
+
+const meatRolls = [
+  {
+    name: "Hausmeisterin",
+    english: "Caretaker",
+    description:
+      "Salad mix with iceberg lettuce, cabbage & mixed greens, avocado hummus, tomato-cucumber salad, corn, yogurt-mint sauce and herb roasted chicken.",
+  },
+  {
+    name: "Feuerwehrfrau",
+    english: "Firefighter",
+    description:
+      "Salad mix with iceberg lettuce, cabbage & mixed greens, chili hummus, mango chutney, jalapeños, garlic sauce and Kikok chicken shawarma.",
+  },
+  {
+    name: "Langzeitstudent",
+    english: "Long-term student",
+    description:
+      "Salad mix with iceberg lettuce, cabbage & mixed greens, peanut hummus, mango chutney, cucumber, mango-curry sauce and Kikok chicken shawarma.",
+  },
+  {
+    name: "Pilot",
+    english: "Pilot",
+    description:
+      "Salad mix with iceberg lettuce, cabbage & mixed greens, classic hummus, cucumber, couscous salad, sweet chili sauce and herb roasted chicken.",
+  },
+];
+
+const veggieBowls = [
+  {
+    name: "Gärtner",
+    english: "Gardener",
+    description:
+      "Salad mix with iceberg lettuce, cabbage & mixed greens, classic hummus, corn, tomato-cucumber salad, cucumber, broccoli, yogurt-mint sauce and veggie shawarma.",
+  },
+  {
+    name: "Bademeisterin",
+    english: "Lifeguard",
+    description:
+      "Salad mix with iceberg lettuce, cabbage & mixed greens, peanut hummus, mango chutney, corn, chickpea-tahini salad, vegan feta, mango-curry sauce and veggie kebab.",
+  },
+  {
+    name: "Matrose",
+    english: "Sailor",
+    description:
+      "Salad mix with iceberg lettuce, cabbage & mixed greens, avocado hummus, tomato-cucumber salad, mango chutney, chickpea-tahini salad, olives, red pepper sauce and falafel.",
+  },
+  {
+    name: "Polizist",
+    english: "Police officer",
+    description:
+      "Basmati rice, classic hummus, broccoli, carrot salad, couscous salad, sweet potato, avocado-sesame sauce and falafel.",
+  },
+  {
+    name: "Influencer",
+    english: "Influencer",
+    description:
+      "Basmati rice, peanut hummus, mango chutney, chickpea-tahini salad, red cabbage, vegan feta, yogurt-mint sauce and veggie shawarma.",
+  },
+  {
+    name: "Schreinerin",
+    english: "Carpenter",
+    description:
+      "Basmati rice, avocado hummus, tomato-cucumber salad, corn, red cabbage, carrot salad, garlic sauce and veggie kebab.",
+  },
+];
+
+const meatBowls = [
+  {
+    name: "Bademeisterin",
+    english: "Lifeguard",
+    description:
+      "Salad mix with iceberg lettuce, cabbage & mixed greens, peanut hummus, mango chutney, corn, chickpea-tahini salad, vegan feta, mango-curry sauce and herb roasted chicken.",
+  },
+  {
+    name: "Lehrer",
+    english: "Teacher",
+    description:
+      "Basmati rice, avocado hummus, couscous salad, sweet potato, broccoli, chickpea-tahini salad, mango-curry sauce and herb roasted chicken.",
+  },
+  {
+    name: "Polizist",
+    english: "Police officer",
+    description:
+      "Basmati rice, classic hummus, broccoli, carrot salad, couscous salad, sweet potato, avocado-sesame sauce and herb roasted chicken.",
+  },
+  {
+    name: "Schreinerin",
+    english: "Carpenter",
+    description:
+      "Basmati rice, avocado hummus, tomato-cucumber salad, corn, red cabbage, carrot salad, garlic sauce and Kikok chicken shawarma.",
+  },
+];
+---
+
+<BaseLayout title="Lunch options">
+  <section class="mx-auto max-w-6xl px-3 py-10 sm:px-6 md:py-16">
+    <h1 class="text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl">
+      Lunch options
+    </h1>
+
+    <p class="mt-4 max-w-3xl text-sm leading-6 text-slate-700 sm:text-base dark:text-slate-200">
+      Lunch on Saturday will be provided by Gustav Grün. You can find the available
+      roll and bowl options below.
+    </p>
+
+    <div class="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
+      <a
+        class="btn btn-secondary w-full !py-2.5 text-center sm:w-auto sm:!py-3"
+        href="/register"
+      >
+        Back to registration
+      </a>
+    </div>
+
+    <div class="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-6">
+      <!-- Rolls -->
+      <div class="card card-dark min-w-0 p-3 sm:p-6">
+        <h2 class="text-lg font-bold sm:text-xl">
+          Rolls
+        </h2>
+
+        <div class="mt-4 sm:mt-5">
+          <h3 class="text-xs font-bold leading-5 text-emerald-700 sm:text-base dark:text-emerald-400">
+            Vegetarian/Vegan options
+            <span class="block sm:inline">· 10.50 €</span>
+          </h3>
+
+          <ul class="mt-3 space-y-4 text-[11px] leading-5 text-slate-600 sm:mt-4 sm:space-y-5 sm:text-sm sm:leading-6 dark:text-slate-300">
+            {veggieRolls.map((item) => (
+              <li>
+                <p class="break-words font-semibold text-slate-900 dark:text-white">
+                  {item.name}
+                  <span class="block font-normal text-slate-500 sm:inline dark:text-slate-400">
+                    {" "}({item.english})
+                  </span>
+                </p>
+                <p class="mt-1 break-words">{item.description}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="mt-6 border-t border-slate-200 pt-4 sm:mt-8 sm:pt-5 dark:border-slate-800">
+          <h3 class="text-xs font-bold leading-5 text-emerald-700 sm:text-base dark:text-emerald-400">
+            Meat options
+            <span class="block sm:inline">· 11.50 €</span>
+          </h3>
+
+          <ul class="mt-3 space-y-4 text-[11px] leading-5 text-slate-600 sm:mt-4 sm:space-y-5 sm:text-sm sm:leading-6 dark:text-slate-300">
+            {meatRolls.map((item) => (
+              <li>
+                <p class="break-words font-semibold text-slate-900 dark:text-white">
+                  {item.name}
+                  <span class="block font-normal text-slate-500 sm:inline dark:text-slate-400">
+                    {" "}({item.english})
+                  </span>
+                </p>
+                <p class="mt-1 break-words">{item.description}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bowls -->
+      <div class="card card-dark min-w-0 p-3 sm:p-6">
+        <h2 class="text-lg font-bold sm:text-xl">
+          Bowls
+        </h2>
+
+        <div class="mt-4 sm:mt-5">
+          <h3 class="text-xs font-bold leading-5 text-emerald-700 sm:text-base dark:text-emerald-400">
+            Vegetarian/Vegan options
+            <span class="block sm:inline">· 13.50 €</span>
+          </h3>
+
+          <ul class="mt-3 space-y-4 text-[11px] leading-5 text-slate-600 sm:mt-4 sm:space-y-5 sm:text-sm sm:leading-6 dark:text-slate-300">
+            {veggieBowls.map((item) => (
+              <li>
+                <p class="break-words font-semibold text-slate-900 dark:text-white">
+                  {item.name}
+                  <span class="block font-normal text-slate-500 sm:inline dark:text-slate-400">
+                    {" "}({item.english})
+                  </span>
+                </p>
+                <p class="mt-1 break-words">{item.description}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="mt-6 border-t border-slate-200 pt-4 sm:mt-8 sm:pt-5 dark:border-slate-800">
+          <h3 class="text-xs font-bold leading-5 text-emerald-700 sm:text-base dark:text-emerald-400">
+            Meat options
+            <span class="block sm:inline">· 14.50 €</span>
+          </h3>
+
+          <ul class="mt-3 space-y-4 text-[11px] leading-5 text-slate-600 sm:mt-4 sm:space-y-5 sm:text-sm sm:leading-6 dark:text-slate-300">
+            {meatBowls.map((item) => (
+              <li>
+                <p class="break-words font-semibold text-slate-900 dark:text-white">
+                  {item.name}
+                  <span class="block font-normal text-slate-500 sm:inline dark:text-slate-400">
+                    {" "}({item.english})
+                  </span>
+                </p>
+                <p class="mt-1 break-words">{item.description}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
