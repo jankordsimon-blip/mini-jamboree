@@ -1,0 +1,136 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const PROJECT_DELIVERABLES_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdS46XesEV3yE6F9n4KLcIbeDofC4Ig1PL95A2GqklQ8yGUNQ/viewform?usp=publish-editor ";
+const PRESENTATION_DELIVERABLES_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf6RcyC-wfPCMIxHGdugCMpE3rHAActzn4Nkd_epxDYbBSoqA/viewform?usp=publish-editor ";
+
+const CONTACT_EMAIL = "igem@uni-muenster.de";
+---
+
+<BaseLayout title="Deliverables">
+  <section class="mx-auto max-w-6xl px-4 py-10 sm:px-6 md:py-16">
+    <h1 class="text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl">
+      Deliverables
+    </h1>
+
+    <p class="mt-4 max-w-3xl text-sm leading-6 text-slate-700 sm:text-base dark:text-slate-200">
+      Participating teams are asked to submit several materials before the event.
+      Please make sure to meet the deadlines listed below. FYI you need a gmail account, sorry.
+    </p>
+
+    <div class="mt-8 grid gap-6 lg:mt-10 lg:grid-cols-2">
+      <div class="card card-dark p-5 sm:p-6">
+        <p class="text-sm font-semibold uppercase tracking-wide text-emerald-600 dark:text-emerald-400">
+          Deadline 1
+        </p>
+
+        <h2 class="mt-2 text-lg font-bold sm:text-xl">
+          Project description, team logo & team photo
+        </h2>
+
+        <p class="mt-3 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
+          By
+          <span class="font-semibold text-slate-900 dark:text-white">
+            July 1, 2026
+          </span>,
+          each participating team should submit the following materials:
+        </p>
+
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
+          <li>
+            A short project description
+          </li>
+
+          <li>
+            Your team logo
+          </li>
+
+          <li>
+            A team photo
+          </li>
+        </ul>
+
+        <div class="mt-6">
+          <a
+            class="btn btn-primary w-full !py-2.5 text-center sm:w-auto sm:!py-3"
+            href={PROJECT_DELIVERABLES_URL}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Submit project materials
+          </a>
+        </div>
+
+        <p class="mt-4 text-xs leading-5 text-slate-500 dark:text-slate-400">
+          The submission form opens in a new tab.
+        </p>
+      </div>
+
+      <div class="card card-dark p-5 sm:p-6">
+        <p class="text-sm font-semibold uppercase tracking-wide text-emerald-600 dark:text-emerald-400">
+          Deadline 2
+        </p>
+
+        <h2 class="mt-2 text-lg font-bold sm:text-xl">
+          Team presentation
+        </h2>
+
+        <p class="mt-3 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
+          By
+          <span class="font-semibold text-slate-900 dark:text-white">
+            July 7, 2026
+          </span>,
+          each team should submit their presentation.
+        </p>
+
+        <ul class="mt-4 list-disc space-y-2 pl-5 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
+          <li>
+            Please upload your team presentation.
+          </li>
+
+          <li>
+            The expected presentation length is approximately
+            <span class="font-semibold text-slate-900 dark:text-white">
+              7 minutes
+            </span>.
+          </li>
+        </ul>
+
+        <div class="mt-6">
+          <a
+            class="btn btn-primary w-full !py-2.5 text-center sm:w-auto sm:!py-3"
+            href={PRESENTATION_DELIVERABLES_URL}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Submit presentation
+          </a>
+        </div>
+
+        <p class="mt-4 text-xs leading-5 text-slate-500 dark:text-slate-400">
+          The submission form opens in a new tab.
+        </p>
+      </div>
+    </div>
+
+    <div class="card card-dark mt-6 p-5 sm:p-6">
+      <h2 class="text-lg font-bold sm:text-xl">
+        Questions or problems?
+      </h2>
+
+      <p class="mt-3 text-sm leading-6 text-slate-600 sm:text-base dark:text-slate-300">
+        If you have any questions, uncertainties, or technical problems with the submission,
+        please contact us by email:
+      </p>
+
+      <p class="mt-4 text-sm leading-6 sm:text-base">
+        <a
+          class="break-all underline hover:text-slate-900 dark:hover:text-white"
+          href={"mailto:" + CONTACT_EMAIL}
+        >
+          {CONTACT_EMAIL}
+        </a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>
