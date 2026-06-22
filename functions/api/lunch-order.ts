@@ -30,6 +30,7 @@ const lunchOptions: LunchOption[] = [
     category: "Roll · Vegetarian/Vegan",
     price: "10.50 €",
   },
+
   {
     id: "roll-meat-hausmeisterin",
     label: "Roll · Meat · Hausmeisterin (Caretaker)",
@@ -54,6 +55,7 @@ const lunchOptions: LunchOption[] = [
     category: "Roll · Meat",
     price: "11.50 €",
   },
+
   {
     id: "bowl-veggie-gaertner",
     label: "Bowl · Vegetarian/Vegan · Gärtner (Gardener)",
@@ -90,6 +92,7 @@ const lunchOptions: LunchOption[] = [
     category: "Bowl · Vegetarian/Vegan",
     price: "13.50 €",
   },
+
   {
     id: "bowl-meat-bademeisterin",
     label: "Bowl · Meat · Bademeisterin (Lifeguard)",
@@ -125,7 +128,10 @@ export const onRequestPost: PagesFunction = async ({ request }) => {
 
     if (!name || !optionId) {
       return new Response(
-        JSON.stringify({ ok: false, error: "Missing required fields." }),
+        JSON.stringify({
+          ok: false,
+          error: "Missing required fields.",
+        }),
         {
           status: 400,
           headers: { "content-type": "application/json" },
@@ -137,7 +143,10 @@ export const onRequestPost: PagesFunction = async ({ request }) => {
 
     if (!selectedOption) {
       return new Response(
-        JSON.stringify({ ok: false, error: "Invalid lunch option." }),
+        JSON.stringify({
+          ok: false,
+          error: "Invalid lunch option.",
+        }),
         {
           status: 400,
           headers: { "content-type": "application/json" },
@@ -145,20 +154,8 @@ export const onRequestPost: PagesFunction = async ({ request }) => {
       );
     }
 
-    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxJyMhOCw6CRiaKI2FjlIo7rB13AGo_Pjs2dCSjoRAEFAyiZjZzWXihOFza3_sOZemU/exec";
-
-    if (APPS_SCRIPT_URL.includes("PASTE_YOUR")) {
-      return new Response(
-        JSON.stringify({
-          ok: false,
-          error: "Lunch Apps Script URL is not configured yet.",
-        }),
-        {
-          status: 500,
-          headers: { "content-type": "application/json" },
-        }
-      );
-    }
+    const APPS_SCRIPT_URL =
+      "https://script.google.com/macros/s/AKfycbyIIR4ngWTdMgg_HVBTgSxDJ2TZxj8ap7bRHWPpM7cnw2bHE2RDwJ6uDMNvC6rW3waFPA/exec";
 
     const res = await fetch(APPS_SCRIPT_URL, {
       method: "POST",
@@ -175,16 +172,73 @@ export const onRequestPost: PagesFunction = async ({ request }) => {
 
     const text = await res.text();
 
-    return new Response(text, {
-      status: res.ok ? 200 : 502,
-      headers: {
-        "content-type": res.headers.get("content-type") || "application/json",
-      },
-    });
+    if (!res.ok) {
+      return new Response(
+        JSON.stringify({
+          ok: false,
+          error: "Apps Script request failed.",
+          upstreamStatus: res.status,
+          upstreamStatusText: res.statusText,
+          upstreamBody: text.slice(0, 1000),
+        }),
+        {
+          status: 500,
+          headers: { "content-type": "application/json" },
+        }
+      );
+    }
+
+    let json: any;
+
+    try {
+      json = JSON.parse(text);
+    } catch {
+      return new Response(
+        JSON.stringify({
+          ok: false,
+          error: "Apps Script did not return JSON.",
+          upstreamBody: text.slice(0, 1000),
+        }),
+        {
+          status: 500,
+          headers: { "content-type": "application/json" },
+        }
+      );
+    }
+
+    if (!json?.ok) {
+      return new Response(
+        JSON.stringify({
+          ok: false,
+          error: "Apps Script returned ok:false.",
+          upstreamBody: json,
+        }),
+        {
+          status: 500,
+          headers: { "content-type": "application/json" },
+        }
+      );
+    }
+
+    return new Response(
+      JSON.stringify({
+        ok: true,
+      }),
+      {
+        status: 200,
+        headers: { "content-type": "application/json" },
+      }
+    );
   } catch (err: any) {
-    return new Response(JSON.stringify({ ok: false, error: String(err) }), {
-      status: 500,
-      headers: { "content-type": "application/json" },
-    });
+    return new Response(
+      JSON.stringify({
+        ok: false,
+        error: String(err),
+      }),
+      {
+        status: 500,
+        headers: { "content-type": "application/json" },
+      }
+    );
   }
 };
